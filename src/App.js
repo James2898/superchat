@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h3>Super Chat</h3>
+        <h3>James Super Chat [Develop]</h3>
         <SignOut />
       </header>
       <section>
@@ -42,8 +42,12 @@ function SignIn() {
   }
 
   return (
-    <button onClick={singInWithGoogle}>Sign in with Google</button>
-  )
+    <div>
+      <button className="sign-in" onClick={singInWithGoogle}>Sign in with Google</button>
+      <br/>
+      <div className="info">Hello Friend! I'll only use your google name and photo for research purpose, no data breaching eme eme. <br/>Thanks, Feel free to drop any message hehe</div>  
+    </div>
+  );
 }
 
 function SignOut() {
@@ -68,11 +72,12 @@ function ChatRoom() {
     } 
     e.preventDefault();
 
-    const {uid, photoURL} =  auth.currentUser;
+    const {uid, photoURL, displayName} =  auth.currentUser;
   
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      displayName,
       uid,
       photoURL
     });
@@ -99,13 +104,13 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const {text, uid, photoURL} = props.message;
+  const {text, uid, photoURL, displayName} = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} alt="" />
+      <img src={photoURL} alt="" title={displayName}/>
       <p>{text}</p>
     </div>
   )

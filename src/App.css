@@ -4,18 +4,17 @@ body {
 
 .App {
   text-align: center;
-  max-width: 728px;
   margin: 0 auto;
 }
 
 .App header {
   background-color: #181717;
+  font-size: 2vw;
   height: 10vh;
   min-height: 50px;
   color: white;
   position: fixed;
   width: 100%;
-  max-width: 728px;
   top: 0;
   display: flex;
   align-items: center;
@@ -36,7 +35,7 @@ body {
 main {
   padding: 10px;
   height: 80vh;
-  margin: 10vh 0 10vh;
+  margin: 5vh 0 5vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -60,7 +59,6 @@ form {
   bottom: 0;
   background-color: rgb(24, 23, 23);
   width: 100%;
-  max-width: 728px;
   display: flex;
   font-size: 1.5rem;
 }
@@ -74,7 +72,7 @@ form button {
 input {
   line-height: 1.5;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 5vw;
   background: rgb(58, 58, 58);
   color: white;
   outline: none;
@@ -91,7 +89,7 @@ button {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 2vw;
 }
 
 button:disabled {
@@ -101,13 +99,21 @@ button:disabled {
 
 
 .sign-in {
-  color: #282c34;
-  background: white;
+  color: white;
+  background: #B31B1B;
   max-width: 400px;
   margin: 0 auto;
 }
 
+.info {
+  font-size: 3vw;
+  text-align: center;
+  color:pink;
+}
 
+.small {
+  font-size: 2px;
+}
 
 
 ul, li {
@@ -116,11 +122,12 @@ ul, li {
 }
 
 p {
-  max-width: 500px;
+  max-width: 5vhpx;
+  font-size: 3vh;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 2vh 2vh;
+  border-radius: 1vh;
   position: relative;
   color: white;
   text-align: center;
@@ -147,9 +154,9 @@ p {
 }
 
 img {
-  width: 40px;
-  height: 40px;
+  width: 5vh;
+  height: 5vh;
   border-radius: 50%;
-  margin: 2px 5px;
+  margin: 5px 5px;
 }
 
